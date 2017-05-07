@@ -9,14 +9,41 @@
 import SpriteKit
 import GameplayKit
 
+
 class GameScene: SKScene {
-    
+    let background = SKSpriteNode(imageNamed: "grass")
+
+    var person = SKSpriteNode()
+    var personWalkFrames = [SKTexture]()
+
     var entities = [GKEntity]()
     var graphs = [String : GKGraph]()
     
     private var lastUpdateTime : TimeInterval = 0
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
+
+    override func didMove(to view: SKView) {
+        self.background.size = self.size
+        self.background.zPosition = -1.0
+        self.addChild(self.background)
+
+
+        let personWalkAtlas = SKTextureAtlas(named: "PersonWalking")
+
+        for i in 0..<personWalkAtlas.textureNames.count {
+            let frameName = "person_walk\(i)"
+            self.personWalkFrames.append(personWalkAtlas.textureNamed(frameName))
+        }
+
+        self.person = SKSpriteNode(imageNamed: personWalkAtlas.textureNames[0])
+        self.person.size = CGSize(width: 100, height: 100)
+        self.person.position = CGPoint(x: 0, y: 0)
+        self.person.zPosition = 1.0
+        self.addChild(self.person)
+
+        self.person.run(.repeatForever(.animate(with: self.personWalkFrames, timePerFrame: 0.1)))
+    }
     
     override func sceneDidLoad() {
 
@@ -26,6 +53,7 @@ class GameScene: SKScene {
         self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
         if let label = self.label {
             label.alpha = 0.0
+            label.position.y = 200
             label.run(SKAction.fadeIn(withDuration: 2.0))
         }
         
@@ -104,7 +132,17 @@ class GameScene: SKScene {
         for entity in self.entities {
             entity.update(deltaTime: dt)
         }
-        
+
+        self.person.position.x += CGFloat(dt) * 200
+
+        if self.person.position.x > (self.size.width / 2) + self.person.size.width {
+            self.person.position.x = (self.size.width / 2 * -1) - self.person.size.width
+
+            let halfHeight = Int(self.size.height / 2)
+            let random = GKRandomDistribution(lowestValue: -halfHeight, highestValue: halfHeight)
+            self.person.position.y = CGFloat(random.nextInt())
+        }
+
         self.lastUpdateTime = currentTime
     }
 }

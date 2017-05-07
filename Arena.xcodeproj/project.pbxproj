@@ -15,9 +15,13 @@
 		21B004941EBEAEFB0063D089 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21B004921EBEAEFB0063D089 /* Main.storyboard */; };
 		21B004961EBEAEFB0063D089 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21B004951EBEAEFB0063D089 /* Assets.xcassets */; };
 		21B004991EBEAEFB0063D089 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21B004971EBEAEFB0063D089 /* LaunchScreen.storyboard */; };
+		21B004A51EBEB4260063D089 /* Sprites.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21B004A41EBEB4260063D089 /* Sprites.xcassets */; };
+		21B004AB1EBEB6800063D089 /* PersonWalking.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 21B004AA1EBEB6800063D089 /* PersonWalking.atlas */; };
+		FFCFC294C24CF8A2218429A6 /* Pods_Arena.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5551A57EF2D4FA301F52A /* Pods_Arena.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14A5551A57EF2D4FA301F52A /* Pods_Arena.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arena.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B004851EBEAEFB0063D089 /* Arena.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arena.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B004881EBEAEFB0063D089 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21B0048A1EBEAEFB0063D089 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -28,6 +32,10 @@
 		21B004951EBEAEFB0063D089 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21B004981EBEAEFB0063D089 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21B0049A1EBEAEFB0063D089 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21B004A41EBEB4260063D089 /* Sprites.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Sprites.xcassets; sourceTree = "<group>"; };
+		21B004AA1EBEB6800063D089 /* PersonWalking.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = PersonWalking.atlas; sourceTree = "<group>"; };
+		2FEE31288E5BCEE4D1CC8FCD /* Pods-Arena.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arena.release.xcconfig"; path = "Pods/Target Support Files/Pods-Arena/Pods-Arena.release.xcconfig"; sourceTree = "<group>"; };
+		E23BBBEE9B73F3712CDB2069 /* Pods-Arena.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arena.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Arena/Pods-Arena.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFCFC294C24CF8A2218429A6 /* Pods_Arena.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +55,8 @@
 			children = (
 				21B004871EBEAEFB0063D089 /* Arena */,
 				21B004861EBEAEFB0063D089 /* Products */,
+				A66FA9542E4600445921015F /* Pods */,
+				F75F16E4DECEF374B807D1FA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,10 +78,29 @@
 				21B004901EBEAEFB0063D089 /* GameViewController.swift */,
 				21B004921EBEAEFB0063D089 /* Main.storyboard */,
 				21B004951EBEAEFB0063D089 /* Assets.xcassets */,
+				21B004A41EBEB4260063D089 /* Sprites.xcassets */,
+				21B004AA1EBEB6800063D089 /* PersonWalking.atlas */,
 				21B004971EBEAEFB0063D089 /* LaunchScreen.storyboard */,
 				21B0049A1EBEAEFB0063D089 /* Info.plist */,
 			);
 			path = Arena;
+			sourceTree = "<group>";
+		};
+		A66FA9542E4600445921015F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E23BBBEE9B73F3712CDB2069 /* Pods-Arena.debug.xcconfig */,
+				2FEE31288E5BCEE4D1CC8FCD /* Pods-Arena.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F75F16E4DECEF374B807D1FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				14A5551A57EF2D4FA301F52A /* Pods_Arena.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 21B0049D1EBEAEFB0063D089 /* Build configuration list for PBXNativeTarget "Arena" */;
 			buildPhases = (
+				057C757DE4A784065644005C /* [CP] Check Pods Manifest.lock */,
 				21B004811EBEAEFB0063D089 /* Sources */,
 				21B004821EBEAEFB0063D089 /* Frameworks */,
 				21B004831EBEAEFB0063D089 /* Resources */,
+				A6E304EF9209CE5A55656EDD /* [CP] Embed Pods Frameworks */,
+				5C424B23D74008C0E4EA8434 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -133,15 +166,65 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21B004A51EBEB4260063D089 /* Sprites.xcassets in Resources */,
 				21B004941EBEAEFB0063D089 /* Main.storyboard in Resources */,
 				21B0048B1EBEAEFB0063D089 /* GameScene.sks in Resources */,
 				21B004961EBEAEFB0063D089 /* Assets.xcassets in Resources */,
 				21B004991EBEAEFB0063D089 /* LaunchScreen.storyboard in Resources */,
+				21B004AB1EBEB6800063D089 /* PersonWalking.atlas in Resources */,
 				21B0048D1EBEAEFB0063D089 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		057C757DE4A784065644005C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5C424B23D74008C0E4EA8434 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Arena/Pods-Arena-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6E304EF9209CE5A55656EDD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Arena/Pods-Arena-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		21B004811EBEAEFB0063D089 /* Sources */ = {
@@ -273,6 +356,7 @@
 		};
 		21B0049E1EBEAEFB0063D089 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E23BBBEE9B73F3712CDB2069 /* Pods-Arena.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F2269BRN5T;
@@ -287,6 +371,7 @@
 		};
 		21B0049F1EBEAEFB0063D089 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FEE31288E5BCEE4D1CC8FCD /* Pods-Arena.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F2269BRN5T;
@@ -318,6 +403,7 @@
 				21B0049F1EBEAEFB0063D089 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
